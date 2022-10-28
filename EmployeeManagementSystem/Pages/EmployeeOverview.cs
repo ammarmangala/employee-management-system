@@ -1,6 +1,6 @@
 namespace EmployeeManagementSystem.Pages;
 
-public class EmployeeOverview
+public partial class EmployeeOverview
 {
     
 }
