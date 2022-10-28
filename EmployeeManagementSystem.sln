@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem", "EmployeeManagementSystem\EmployeeManagementSystem.csproj", "{DE60D8A1-8F00-43CC-A8EF-EE212C061233}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BethanysPieShopHRM.Shared", "BethanysPieShopHRM.Shared\BethanysPieShopHRM.Shared.csproj", "{B96CA86C-E0C1-4CD2-B56F-FF7D74EE8567}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementSystem.Shared", "EmployeeManagementSystem.Shared\EmployeeManagementSystem.Shared.csproj", "{B96CA86C-E0C1-4CD2-B56F-FF7D74EE8567}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-﻿namespace BethanysPieShopHRM.Shared.Domain
+﻿namespace EmployeeManagementSystem.Shared.Domain
 {
     public enum Gender
     {
