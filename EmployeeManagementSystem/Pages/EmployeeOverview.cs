@@ -9,6 +9,7 @@ public partial class EmployeeOverview
 
     protected override void OnInitialized()
     {
+        // Get the list of employees from the MockDataService
         Employees = MockDataService.Employees;
     }
-} 
+}
