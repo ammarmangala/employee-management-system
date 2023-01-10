@@ -20,6 +20,9 @@
       <Content Update="Pages\EmployeeOverview.razor">
         <DependentUpon>EmployeeOverview.cs</DependentUpon>
       </Content>
+      <Content Update="Components\EmployeeCard.razor">
+        <DependentUpon>EmployeeCard.cs</DependentUpon>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>
