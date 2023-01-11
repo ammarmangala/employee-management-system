@@ -15,7 +15,7 @@ public partial class EmployeeOverview
         Employees = MockDataService.Employees;
     }
 
-    private void ShowQuickViewPopup(Employee selectedEmployee)
+    public void ShowQuickViewPopup(Employee selectedEmployee)
     {
         _selectedEmployee = selectedEmployee;
     }
