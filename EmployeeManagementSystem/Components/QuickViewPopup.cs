@@ -8,5 +8,5 @@ public partial class QuickViewPopup
     [Parameter]
     public Employee? Employee { get; set; }
 
-    private Employee? _employee;
+    private Employee? _employee; 
 }
