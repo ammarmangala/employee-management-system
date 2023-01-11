@@ -20,14 +20,20 @@
       <Content Update="Pages\EmployeeOverview.razor">
         <DependentUpon>EmployeeOverview.cs</DependentUpon>
       </Content>
-      <Content Update="Components\EmployeeCard.razor">
-        <DependentUpon>EmployeeCard.cs</DependentUpon>
-      </Content>
     </ItemGroup>
 
     <ItemGroup>
       <AdditionalFiles Update="Pages\EmployeeOverview.razor">
         <DependentUpon>EmployeeOverview.cs</DependentUpon>
       </AdditionalFiles>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Components\EmployeeCard.cs">
+        <DependentUpon>EmployeeCard.razor</DependentUpon>
+      </Compile>
+      <Compile Update="Components\QuickViewPopup.cs">
+        <DependentUpon>QuickViewPopup.razor</DependentUpon>
+      </Compile>
     </ItemGroup>
 </Project>
