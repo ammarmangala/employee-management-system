@@ -35,5 +35,8 @@
       <Compile Update="Pages\EmployeeOverview.cs">
         <DependentUpon>EmployeeOverview.razor</DependentUpon>
       </Compile>
+      <Compile Update="Components\ProfilePicture.cs">
+        <DependentUpon>ProfilePicture.razor</DependentUpon>
+      </Compile>
     </ItemGroup>
 </Project>
