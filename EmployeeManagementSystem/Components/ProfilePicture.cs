@@ -5,5 +5,5 @@ namespace EmployeeManagementSystem.Components;
 public partial class ProfilePicture
 {
     [Parameter]
-    public RenderFragment? Childcontent { get; set; }
+    public RenderFragment? ChildContent { get; set; }
 }

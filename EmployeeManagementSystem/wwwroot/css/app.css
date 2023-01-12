@@ -11908,3 +11908,6 @@ h6, .h6 {
     background-color: #FFF !important;
 }
 
+.profile-picture {
+    opacity: 0.7 !important;
+}
