@@ -8,7 +8,7 @@ public partial class EmployeeDetail
 {
     [Parameter] public string EmployeeId { get; set; }
 
-    public Employee? Employee { get; set; } = new Employee();
+    public Employee? Employee { get; set; }  = new Employee();
 
     protected override Task OnInitializedAsync()
     {
