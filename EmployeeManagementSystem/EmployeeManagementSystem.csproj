@@ -17,6 +17,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Update="Pages\EmployeeOverview.razor">
+        <DependentUpon>EmployeeOverview.cs</DependentUpon>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
       <AdditionalFiles Update="Pages\EmployeeOverview.razor">
         <DependentUpon>EmployeeOverview.cs</DependentUpon>
       </AdditionalFiles>
@@ -28,9 +34,6 @@
       </Compile>
       <Compile Update="Components\EmployeeCard.cs">
         <DependentUpon>EmployeeCard.razor</DependentUpon>
-      </Compile>
-      <Compile Update="Pages\EmployeeOverview.cs">
-        <DependentUpon>EmployeeOverview.razor</DependentUpon>
       </Compile>
     </ItemGroup>
 </Project>
