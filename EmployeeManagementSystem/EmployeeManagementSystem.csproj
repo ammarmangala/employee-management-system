@@ -29,8 +29,23 @@
       <Compile Update="Components\EmployeeCard.cs">
         <DependentUpon>EmployeeCard.razor</DependentUpon>
       </Compile>
+      <Compile Update="Pages\EmployeeDetail.cs">
+        <DependentUpon>EmployeeDetail.razor</DependentUpon>
+      </Compile>
       <Compile Update="Pages\EmployeeOverview.cs">
         <DependentUpon>EmployeeOverview.razor</DependentUpon>
+      </Compile>
+      <Compile Update="Components\ProfilePicture.cs">
+        <DependentUpon>ProfilePicture.razor</DependentUpon>
+      </Compile>
+      <Compile Update="Components\Widgets\EmployeeCountWidget.cs">
+        <DependentUpon>EmployeeCountWidget.razor</DependentUpon>
+      </Compile>
+      <Compile Update="Components\Widgets\InboxWidget.cs">
+        <DependentUpon>InboxWidget.razor</DependentUpon>
+      </Compile>
+      <Compile Update="Pages\Index.cs">
+        <DependentUpon>Index.razor</DependentUpon>
       </Compile>
     </ItemGroup>
 </Project>
