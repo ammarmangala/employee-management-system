@@ -38,5 +38,11 @@
       <Compile Update="Components\ProfilePicture.cs">
         <DependentUpon>ProfilePicture.razor</DependentUpon>
       </Compile>
+      <Compile Update="Components\Widgets\EmployeeCountWidget.cs">
+        <DependentUpon>EmployeeCountWidget.razor</DependentUpon>
+      </Compile>
+      <Compile Update="Components\Widgets\InboxWidget.cs">
+        <DependentUpon>InboxWidget.razor</DependentUpon>
+      </Compile>
     </ItemGroup>
 </Project>
