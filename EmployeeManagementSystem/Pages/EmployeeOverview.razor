@@ -4,7 +4,9 @@
 
 @if (Employees == null)
 {
-    <p><em>Loading...</em></p>
+    <p>
+        <em>Loading...</em>
+    </p>
 }
 else
 {
@@ -13,7 +15,14 @@ else
         @foreach (var employee in Employees)
         {
             <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                 <EmployeeCard Employee="employee" EmployeeQuickViewClicked="ShowQuickViewPopup"></EmployeeCard>
+                <ErrorBoundary>
+                    <ChildContent>
+                        <EmployeeCard Employee="employee" EmployeeQuickViewClicked="ShowQuickViewPopup"></EmployeeCard>
+                    </ChildContent>
+                    <ErrorContent>
+                        <p class="errorUI">Invalid Employee!</p>
+                    </ErrorContent>
+                </ErrorBoundary>
             </div>
         }
     </div>
