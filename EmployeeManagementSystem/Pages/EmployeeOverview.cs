@@ -9,6 +9,8 @@ public partial class EmployeeOverview
 
     private Employee? _selectedEmployee;
 
+    private string Title = "Employee overview";
+
     protected override void OnInitialized()
     {
         // Get the list of employees from the MockDataService
