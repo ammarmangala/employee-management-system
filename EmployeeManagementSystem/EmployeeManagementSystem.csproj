@@ -44,5 +44,8 @@
       <Compile Update="Components\Widgets\InboxWidget.cs">
         <DependentUpon>InboxWidget.razor</DependentUpon>
       </Compile>
+      <Compile Update="Pages\Index.cs">
+        <DependentUpon>Index.razor</DependentUpon>
+      </Compile>
     </ItemGroup>
 </Project>
