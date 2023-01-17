@@ -9,7 +9,7 @@
     }
   },
   "profiles": {
-    "BethanysPieShopHRM.Api": {
+    "EmployeeManagementSystem.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
