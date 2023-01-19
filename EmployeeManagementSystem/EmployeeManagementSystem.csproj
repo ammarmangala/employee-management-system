@@ -7,6 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.10" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.10" PrivateAssets="all" />
         <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
@@ -47,6 +48,9 @@
       </Compile>
       <Compile Update="Pages\Index.cs">
         <DependentUpon>Index.razor</DependentUpon>
+      </Compile>
+      <Compile Update="Components\InboxCounter.cs">
+        <DependentUpon>InboxCounter.razor</DependentUpon>
       </Compile>
     </ItemGroup>
 </Project>

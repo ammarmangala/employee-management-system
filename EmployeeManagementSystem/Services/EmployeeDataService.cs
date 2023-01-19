@@ -1,18 +1,19 @@
 using System.Text;
 using System.Text.Json;
+using Blazored.LocalStorage;
 using EmployeeManagementSystem.Shared.Domain;
-using System.Collections.Generic;
-using System.Net.Http;
 
 namespace EmployeeManagementSystem.Services;
 
 public class EmployeeDataService : IEmployeeDataService
 {
     private readonly HttpClient _httpClient;
+    private readonly ILocalStorageService _localStorageService;
 
-    public EmployeeDataService(HttpClient httpClient)
+    public EmployeeDataService(HttpClient httpClient, ILocalStorageService localStorageService)
     {
         _httpClient = httpClient;
+        _localStorageService = localStorageService;
     }
 
     public async Task<IEnumerable<Employee>> GetAllEmployees()
@@ -56,4 +57,6 @@ public class EmployeeDataService : IEmployeeDataService
     {
         await _httpClient.DeleteAsync($"api/employee/{employeeId}");
     }
+
 }
+
