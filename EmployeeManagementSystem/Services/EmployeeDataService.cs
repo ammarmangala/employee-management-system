@@ -1,6 +1,7 @@
 using System.Text;
 using System.Text.Json;
 using Blazored.LocalStorage;
+using EmployeeManagementSystem.Helper;
 using EmployeeManagementSystem.Shared.Domain;
 
 namespace EmployeeManagementSystem.Services;
@@ -16,12 +17,47 @@ public class EmployeeDataService : IEmployeeDataService
         _localStorageService = localStorageService;
     }
 
+    public async Task<IEnumerable<Employee>> GetAllEmployees(bool refreshRequired = false)
+    {
+        if (refreshRequired)
+        {
+            bool employeeExpirationExists =
+                await _localStorageService.ContainKeyAsync(LocalStorageConstants.EmployeesListExpirationKey);
+            if (employeeExpirationExists)
+            {
+                DateTime employeeListExpiration =
+                    await _localStorageService.GetItemAsync<DateTime>(LocalStorageConstants.EmployeesListExpirationKey);
+                if (employeeListExpiration > DateTime.Now) //get from local storage
+                {
+                    if (await _localStorageService.ContainKeyAsync(LocalStorageConstants.EmployeesListKey))
+                    {
+                        return await _localStorageService.GetItemAsync<List<Employee>>(LocalStorageConstants
+                            .EmployeesListKey);
+                    }
+                }
+            }
+        }
+
+        //otherwise refresh the list locally from the API and set expiration to 1 minute in future
+
+        var list = await JsonSerializer.DeserializeAsync<IEnumerable<Employee>>
+        (await _httpClient.GetStreamAsync($"api/employee"),
+            new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+
+        await _localStorageService.SetItemAsync(LocalStorageConstants.EmployeesListKey, list);
+        await _localStorageService.SetItemAsync(LocalStorageConstants.EmployeesListExpirationKey,
+            DateTime.Now.AddMinutes(1));
+
+        return list;
+    }
+
+
     public async Task<IEnumerable<Employee>> GetAllEmployees()
     {
         return await JsonSerializer.DeserializeAsync<IEnumerable<Employee>>
-            (await _httpClient.GetStreamAsync($"api/employee"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        (await _httpClient.GetStreamAsync($"api/employee"),
+            new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
     }
-    
 
     public async Task<Employee> GetEmployeeDetails(int employeeId)
     {
@@ -57,6 +93,4 @@ public class EmployeeDataService : IEmployeeDataService
     {
         await _httpClient.DeleteAsync($"api/employee/{employeeId}");
     }
-
 }
-
