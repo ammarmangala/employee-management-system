@@ -13,5 +13,10 @@ public partial class EmployeeEdit
     public string? EmployeeId { get; set; }
 
     public Employee Employee { get; set; } = new Employee();
-    
+
+    protected override async Task OnInitializedAsync()
+    {
+        Employee = await EmployeeDataService.GetEmployeeDetails(int.Parse(
+            EmployeeId));
+    }
 }

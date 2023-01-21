@@ -1,4 +1,58 @@
 @page "/employeeedit"
 @page "/employeeedit/{EmployeeId}"
- 
- 
+
+<section class="employee-edit">
+    <h1 class="page-title">Details for @Employee.FirstName @Employee.LastName</h1>
+    <EditForm Model="@Employee">
+
+        <div class="row mb-3">
+            <label for="lastName" class="col-form-label col-md-3">Last name: </label>
+            <div class="col-md-8">
+                <InputText id="lastName" @bind-Value="@Employee.LastName" class="form-control col-md-8" placeholder="Enter last name"></InputText>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="firstName" class="col-form-label col-md-3">First name: </label>
+            <div class="col-md-8">
+                <InputText id="firstnaem" @bind-Value="@Employee.FirstName" class="form-control col-md-8" placeholder="Enter first name"></InputText>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="birthdate" class="col-form-label col-md-3">Birthday: </label>
+            <div class="col-md-8">
+                <InputDate id="birthday" @bind-Value="@Employee.BirthDate" class="form-control col-md-8" placeholder="Enter birthdate"></InputDate>
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="email" class="col-form-label col-md-3">E-mail: </label>
+            <div class="col-md-8">
+                <InputText id="email" @bind-Value="@Employee.Email" class="form-control col-md-8" placeholder="Enter e-mail"></InputText>
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <label for="street" class="col-form-label col-md-3">Street: </label>
+            <div class="col-md-8">
+                <InputText id="street" @bind-Value="@Employee.Street" class="form-control col-md-8" placeholder="Enter street"></InputText>
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <label for="zip" class="col-form-label col-md-3">Zip code: </label>
+            <div class="col-md-8">
+                <InputText id="zip" @bind-Value="@Employee.Zip" class="form-control col-md-8" placeholder="Enter zip code"></InputText>
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <label for="city" class="col-form-label col-md-3">City: </label>
+            <div class="col-md-8">
+                <InputText id="city" @bind-Value="@Employee.City" class="form-control col-md-8" placeholder="Enter city"></InputText>
+            </div>
+        </div>
+
+    </EditForm>
+</section>
