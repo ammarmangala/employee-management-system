@@ -2,6 +2,7 @@ using System.Configuration;
 using EmployeeManagementSystem.Services;
 using EmployeeManagementSystem.Shared.Domain;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Forms;
 
 namespace EmployeeManagementSystem.Pages;
 
@@ -54,6 +55,18 @@ public partial class EmployeeEdit
 
         if (Employee.EmployeeId == 0) //new
         {
+            if (selectedFile != null)
+            {
+                var file = selectedFile;
+                Stream stream = file.OpenReadStream();
+                MemoryStream ms = new();
+                await stream.CopyToAsync(ms);
+                stream.Close();
+
+                Employee.ImageName = file.Name;
+                Employee.ImageContent = ms.ToArray();
+            }
+            
             var addedEmployee = await EmployeeDataService.AddEmployee(Employee);
             if (addedEmployee != null)
             {
@@ -75,6 +88,14 @@ public partial class EmployeeEdit
             Message = "Employee updated successfully.";
             Saved = true;
         }
+    }
+
+    private IBrowserFile selectedFile;
+
+    private void OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        selectedFile = e.File;
+        StateHasChanged();
     }
 
     protected async Task HandleInvalidSubmit()
