@@ -1,6 +1,6 @@
 namespace EmployeeManagementSystem.Services;
 
-public class BenefitDataService
+public class BenefitDataService : IBenefitDataService
 {
     
 }

@@ -14,6 +14,8 @@ builder.Services.AddHttpClient<ICountryDataService, CountryDataService>(client =
     client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 builder.Services.AddHttpClient<IJobCategoryDataService, JobCategoryDataService>(client =>
     client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
+builder.Services.AddHttpClient<IBenefitDataService, BenefitDataService>(client =>
+    client.BaseAddress = new Uri(builder.HostEnvironment.BaseAddress));
 
 builder.Services.AddScoped<ApplicationState>();
 

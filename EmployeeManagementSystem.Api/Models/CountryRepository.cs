@@ -18,7 +18,7 @@ namespace EmployeeManagementSystem.Api.Models
 
         public Country GetCountryById(int countryId)
         {
-            return _appDbContext.Countries.FirstOrDefault(c => c.CountryId == countryId);
+            return _appDbContext.Countries.FirstOrDefault(c => c.CountryId == countryId)!;
         }
     }
 }
