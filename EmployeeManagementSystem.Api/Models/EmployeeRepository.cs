@@ -19,7 +19,7 @@ namespace EmployeeManagementSystem.Api.Models
 
         public Employee GetEmployeeById(int employeeId)
         {
-            return _appDbContext.Employees.FirstOrDefault(c => c.EmployeeId == employeeId);
+            return _appDbContext.Employees.FirstOrDefault(c => c.EmployeeId == employeeId)!;
         }
 
         public Employee AddEmployee(Employee employee)
