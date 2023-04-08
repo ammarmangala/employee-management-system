@@ -13,7 +13,7 @@ namespace EmployeeManagementSystem.Api.Controllers
         private readonly IHttpContextAccessor _httpContextAccessor;
         public EmployeeController(IEmployeeRepository employeeRepository)//, IWebHostEnvironment webHostEnvironment, IHttpContextAccessor httpContextAccessor)
         {
-            _employeeRepository = employeeRepository;
+            //_employeeRepository = employeeRepository;
             //_webHostEnvironment = webHostEnvironment;
             //_httpContextAccessor = httpContextAccessor;
         }

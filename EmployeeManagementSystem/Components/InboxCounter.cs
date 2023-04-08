@@ -7,7 +7,7 @@ public partial class InboxCounter
     private int MessageCount;
     
     [Inject]
-    public ApplicationState ApplicationState { get; set; }
+    public ApplicationState? ApplicationState { get; set; }
 
     protected override void OnInitialized()
     {
