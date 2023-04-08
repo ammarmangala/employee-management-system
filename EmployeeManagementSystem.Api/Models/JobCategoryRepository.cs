@@ -23,7 +23,7 @@ namespace EmployeeManagementSystem.Api.Models
 
         public JobCategory GetJobCategoryById(int jobCategoryId)
         {
-            return _appDbContext.JobCategories.FirstOrDefault(c => c.JobCategoryId == jobCategoryId);
+            return _appDbContext.JobCategories.FirstOrDefault(c => c.JobCategoryId == jobCategoryId)!;
         }
     }
 }

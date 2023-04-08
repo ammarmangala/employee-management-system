@@ -14,15 +14,15 @@ public class CountryDataService : ICountryDataService
 
     public async Task<IEnumerable<Country>> GetAllCountries()
     {
-        return await JsonSerializer.DeserializeAsync<IEnumerable<Country>>
+        return (await JsonSerializer.DeserializeAsync<IEnumerable<Country>>
         (await _httpClient.GetStreamAsync($"api/country"),
-            new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            new JsonSerializerOptions() { PropertyNameCaseInsensitive = true }))!;
     }
 
     public async Task<Country> GetCountryById(int countryId)
     {
-        return await JsonSerializer.DeserializeAsync<Country>
+        return (await JsonSerializer.DeserializeAsync<Country>
         (await _httpClient.GetStreamAsync($"api/country{countryId}"),
-            new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            new JsonSerializerOptions() { PropertyNameCaseInsensitive = true }))!;
     }
 }
